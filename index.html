@@ -12,7 +12,19 @@
     <meta name="google-signin-client_id" content="542758334391-lrvmgubamvndoi8mh9usp13vrrdcimi3.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
+ <body>
+   <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">DOs & DONTs</div>
+      </div>
+    </div>
 
+  </body>
+  </head>
     <script>
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Template_2.json", {onProgress: UnityProgress});
 var userName;
@@ -94,17 +106,6 @@ customButtonSignIn();
       }
 
     </script>
-  </head>
-  <body>
-   <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-    <div class="webgl-content">
-      <div id="unityContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">DOs & DONTs</div>
-      </div>
-    </div>
 
-  </body>
+ 
 </html>
