@@ -47,7 +47,9 @@ jsToUnity(userEmail);
     function customButtonSignIn()
       {
       gapi.auth2.getAuthInstance().signIn().then(function()
-                                                 {googlAlreadySignedIn();});
+                                                 {
+        alert("signed in !!");
+        googlAlreadySignedIn("a");});
       }
 
     function googlAlreadySignedIn(checker)
