@@ -67,8 +67,9 @@ jsToUnity(userEmail);
       }
     function googlAlreadySignedIn(checker)
       {
-          alert("javascript to unity mediator get called");
+          
          var a=gapi.auth2.getAuthInstance().isSignedIn.get();
+        alert("javascript to unity mediator get called" + a);
         if(a)
         {
 
