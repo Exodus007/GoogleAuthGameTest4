@@ -66,23 +66,7 @@ jsToUnity(userEmail);
       gapi.auth2.getAuthInstance().signIn().then(function()
         
                                              {
-         gapi.load('auth2', function() {
-
-  gapi.auth2.init({
-
-    client_id: '542758334391-lrvmgubamvndoi8mh9usp13vrrdcimi3.apps.googleusercontent.com',
-
-  }).then(function(){
-
-    auth2 = gapi.auth2.getAuthInstance();
-    console.log(auth2.isSignedIn.get()); //now this always returns correctly     
-     var profile1 = googleUser.getBasicProfile();
-    userName=profile1.getName();
-userEmail=profile1.getEmail();
-jsToUnity(userEmail);
-
-  });
-});
+     
         alert("signed in !!");
         googlAlreadySignedIn("a");});
       }
