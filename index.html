@@ -63,14 +63,8 @@ jsToUnity(userEmail);
     
     function customButtonSignIn()
       {
-      gapi.auth2.getAuthInstance().signIn().then(function()
-        
-                                             {
-     
-        alert("signed in !!");
-        googlAlreadySignedIn("a");});
+      gapi.auth2.getAuthInstance().signIn();
       }
-
     function googlAlreadySignedIn(checker)
       {
           alert("javascript to unity mediator get called");
