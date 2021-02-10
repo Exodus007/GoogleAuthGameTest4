@@ -84,7 +84,7 @@ jsToUnity(userEmail);
         alert("javascript to unity mediator get called" + a);
         if(a)
         {
-var profile = gapi.auth2.currentUser.get().getBasicProfile();
+var profile = gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile();
   console.log('ID: ' + profile.getId());
   console.log('Full Name: ' + profile.getName());
   console.log('Given Name: ' + profile.getGivenName());
