@@ -64,6 +64,8 @@ jsToUnity(userEmail);
     function customButtonSignIn()
       {
       gapi.auth2.getAuthInstance().signIn().then(function()
+        
+                                             {
          gapi.load('auth2', function() {
 
   gapi.auth2.init({
@@ -81,7 +83,6 @@ jsToUnity(userEmail);
 
   });
 });
-                                             {
         alert("signed in !!");
         googlAlreadySignedIn("a");});
       }
