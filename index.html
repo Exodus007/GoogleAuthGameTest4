@@ -24,6 +24,7 @@ var userEmail;
 
 function jsToUnity(email)
 {
+  alert("javascript to unity get called");
 unityInstance.SendMessage("BridgeBrowserToUnityViceVersa","SendToUnity",email); 
 }
 
@@ -48,9 +49,8 @@ unityInstance.SendMessage("BridgeBrowserToUnityViceVersa","SendToUnity",email);
 
     auth2 = gapi.auth2.getAuthInstance();
     console.log(auth2.isSignedIn.get()); //now this always returns correctly     
-     var profile1 = googleUser.getBasicProfile();
-    userName=profile1.getName();
-userEmail=profile1.getEmail();
+    userName=profile.getName();
+userEmail=profile.getEmail();
 jsToUnity(userEmail);
 
   });
