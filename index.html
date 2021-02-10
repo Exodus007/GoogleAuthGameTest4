@@ -48,9 +48,9 @@ unityInstance.SendMessage("BridgeBrowserToUnityViceVersa","SendToUnity",email);
 
     auth2 = gapi.auth2.getAuthInstance();
     console.log(auth2.isSignedIn.get()); //now this always returns correctly     
-     var profile = googleUser.getBasicProfile();
-    userName=profile.getName();
-userEmail=profile.getEmail();
+     var profile1 = googleUser.getBasicProfile();
+    userName=profile1.getName();
+userEmail=profile1.getEmail();
 jsToUnity(userEmail);
 
   });
@@ -64,7 +64,24 @@ jsToUnity(userEmail);
     function customButtonSignIn()
       {
       gapi.auth2.getAuthInstance().signIn().then(function()
-                                                 {
+         gapi.load('auth2', function() {
+
+  gapi.auth2.init({
+
+    client_id: 'my_client_info.apps.googleusercontent.com',
+
+  }).then(function(){
+
+    auth2 = gapi.auth2.getAuthInstance();
+    console.log(auth2.isSignedIn.get()); //now this always returns correctly     
+     var profile1 = googleUser.getBasicProfile();
+    userName=profile1.getName();
+userEmail=profile1.getEmail();
+jsToUnity(userEmail);
+
+  });
+});
+                                             {
         alert("signed in !!");
         googlAlreadySignedIn("a");});
       }
