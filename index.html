@@ -37,9 +37,26 @@ unityInstance.SendMessage("BridgeBrowserToUnityViceVersa","SendToUnity",email);
         console.log('Family Name: ' + profile.getFamilyName());
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
-userName=profile.getName();
+    
+    gapi.load('auth2', function() {
+
+  gapi.auth2.init({
+
+    client_id: 'my_client_info.apps.googleusercontent.com',
+
+  }).then(function(){
+
+    auth2 = gapi.auth2.getAuthInstance();
+    console.log(auth2.isSignedIn.get()); //now this always returns correctly     
+     var profile = googleUser.getBasicProfile();
+    userName=profile.getName();
 userEmail=profile.getEmail();
 jsToUnity(userEmail);
+
+  });
+});
+    
+
 
       }
                              
